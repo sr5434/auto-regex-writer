@@ -18,8 +18,20 @@ export async function POST(req: Request) {
     stream: true,
     messages: [
       {
-        role: 'user',
-        content: `When given a description of a regular expression, write the regular expression: ${code}`,
+        "role": "system",
+        "content": "When given a description of a regular expression, write the regular expression to match it."
+      },
+      {
+        "role": "user",
+        "content": "US phone numbers"
+      },
+      {
+        "role": "assistant",
+        "content": "^\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}$"
+      },
+      {
+        "role": "user",
+        "content": `${code}`
       },
     ],
   });
