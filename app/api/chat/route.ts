@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     messages: [
       {
         "role": "system",
-        "content": "When given a description of a regular expression, write the regular expression to match it."
+        "content": "When given a description of a regular expression, write the regular expression to match it and do not write any other text."
       },
       {
         "role": "user",
@@ -29,6 +29,14 @@ export async function POST(req: Request) {
         "role": "assistant",
         "content": "^\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}$"
       },
+      {
+        "role": "user",
+        "content": "Emails"
+      },
+      {
+        "role": "assistant",
+        "content": "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+      }
       {
         "role": "user",
         "content": `${code}`
