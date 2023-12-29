@@ -36,7 +36,7 @@ export async function POST(req: Request) {
       {
         "role": "assistant",
         "content": "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-      }
+      },
       {
         "role": "user",
         "content": `${code}`
